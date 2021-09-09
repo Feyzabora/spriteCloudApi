@@ -31,7 +31,7 @@ public class ApiUtilities {
         }
     }
 
-    public Response performApiCall(String requestType, Object input, Boolean fatal){
+    public Response performApiCall(String requestType, Object body){
 
         Response response = null;
 
@@ -46,9 +46,9 @@ public class ApiUtilities {
                 case "post":
                     request = RestAssured.given().header("Content-Type","application/json").header("Accept","application/json");
 
-                    if (input!=null && input!="")
-                        request.body(input);
-                    else if(fatal)
+                    if (body!=null && body!="")
+                        request.body(body);
+                    else
                         Assert.fail("The input cannot be null");
 
                     response = request.post(requestUrl);
@@ -76,9 +76,9 @@ public class ApiUtilities {
                 case "put":
                     request = RestAssured.given().header("Content-Type","application/json").header("Accept","application/json");
 
-                    if (input!=null && input!="")
-                        request.body(input);
-                    else if(fatal)
+                    if (body!=null && body!="")
+                        request.body(body);
+                    else
                         Assert.fail("The input cannot be null");
 
                     response = request.put(requestUrl);
