@@ -27,7 +27,7 @@ public class ApiSteps {
     public void deleteUser(String userName){api.deleteUser(userName);}
 
     @Given("I update users:")
-    public void updateUsername (DataTable dataTable){api.updateInfo(dataTable);}
+    public void updateData (DataTable dataTable){api.updateInfo(dataTable);}
 
     @Given("User {} logs out")
     public void logoutFromTheAccount(String userName){api.logout(userName);}
