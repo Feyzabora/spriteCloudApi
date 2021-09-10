@@ -1,6 +1,5 @@
 package library;
 
-import com.google.gson.JsonObject;
 import io.cucumber.datatable.DataTable;
 import io.restassured.response.Response;
 import library.user.User;
@@ -91,6 +90,7 @@ public class ApiLibrary {
             if (response.getStatusCode() == 200) {
                 System.out.println("Users were all successfully updated.");
                 apiUtil.contextJSON.put("users", apiUtil.serverResponse);
+                sleep(1.5);
             } else Assert.fail("The server response was unexpectedly " + response.getStatusCode());
         }
 
@@ -138,6 +138,7 @@ public class ApiLibrary {
             if (response.getStatusCode() == 200) {
                 System.out.println("User was succcessfully posted.");
                 apiUtil.contextJSON.put("users", apiUtil.serverResponse);
+                sleep(1.5);
             } else Assert.fail("The server response was unexpectedly " + response.getStatusCode());
         }
 
@@ -175,6 +176,7 @@ public class ApiLibrary {
         if (response.getStatusCode() == 200){
             System.out.println("Users were all succcessfully posted.");
             apiUtil.contextJSON.put("users", apiUtil.serverResponse);
+            sleep(1.5);
         }
         else Assert.fail("The server response was unexpectedly "+response.getStatusCode());
     }
@@ -209,8 +211,17 @@ public class ApiLibrary {
         if (response.getStatusCode() == 200){
             System.out.println("Users were all succcessfully posted.");
             apiUtil.contextJSON.put("users", apiUtil.serverResponse);
+            sleep(1.5);
         }
         else Assert.fail("The server response was unexpectedly "+response.getStatusCode());
+    }
+
+    public void sleep(double seconds){
+        try {
+            Thread.sleep((long) (seconds*1000));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 }

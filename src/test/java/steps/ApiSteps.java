@@ -20,13 +20,13 @@ public class ApiSteps {
     @Given("I get user named {}")
     public void getUser(String userName){api.getUser(userName);}
 
-    @Given("I logged with user {} and password {}")
+    @Given("I logged in with user {} and password {}")
     public void loginWithUsernameAndPassword(String userName, String password){api.login(userName,password);}
 
     @Given("I delete user named {}")
     public void deleteUser(String userName){api.deleteUser(userName);}
 
-    @Given("I update users:")
+    @Given("I update user(s):")
     public void updateData (DataTable dataTable){api.updateInfo(dataTable);}
 
     @Given("User {} logs out")
