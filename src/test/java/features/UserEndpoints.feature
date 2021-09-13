@@ -1,3 +1,4 @@
+@UserEndpoints
 Feature: Endpoint Tests
   Scenario: Add user as a List
     * I post users as list:

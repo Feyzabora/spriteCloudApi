@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><testng-results failed="0" passed="1" skipped="0" total="1">
+<suite duration-ms="4017" name="cucumber.runtime.formatter.TestNGFormatter">
+<test duration-ms="4017" name="cucumber.runtime.formatter.TestNGFormatter">
+<class name="Endpoint Tests">
+<test-method duration-ms="4017" finished-at="2021-09-11T14:43:55Z" name="Get &amp; print user" started-at="2021-09-11T14:43:55Z" status="PASS"/>
+</class>
+</test>
+</suite>
+</testng-results>
